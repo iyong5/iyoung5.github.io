@@ -1,0 +1,333 @@
+<!DOCTYPE html><html class="theme-next muse use-motion" lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="theme-color" content="#222"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css"><link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4"><link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222"><meta name="keywords" content="thinkphp,"><meta name="description" content="本规范遵循PSR-2命名规范和PSR-4自动加载规范，参考：PSR-2、 PSR-4  命名文件 目录使用小写+下划线； 类库、函数文件统一以.php为后缀； 类的文件名均以命名空间定义，并且命名空间的路径和类库文件所在路径一致； 类文件采用驼峰法命名（首字母大写），其它文件采用小写+下划线命名；"><meta name="keywords" content="thinkphp"><meta property="og:type" content="article"><meta property="og:title" content="PHP开发规范"><meta property="og:url" content="https://blog.w2yun.com/2019/06/25/Norm-of-PHP-Development/index.html"><meta property="og:site_name" content="贝克街的卡夫卡"><meta property="og:description" content="本规范遵循PSR-2命名规范和PSR-4自动加载规范，参考：PSR-2、 PSR-4  命名文件 目录使用小写+下划线； 类库、函数文件统一以.php为后缀； 类的文件名均以命名空间定义，并且命名空间的路径和类库文件所在路径一致； 类文件采用驼峰法命名（首字母大写），其它文件采用小写+下划线命名；"><meta property="og:locale" content="zh-Hans"><meta property="og:image" content="https://blog.w2yun.com/2019/06/25/Norm-of-PHP-Development/1.png"><meta property="og:image" content="https://blog.w2yun.com/2019/06/25/Norm-of-PHP-Development/2.png"><meta property="og:image" content="https://blog.w2yun.com/2019/06/25/Norm-of-PHP-Development/3.png"><meta property="og:image" content="https://blog.w2yun.com/2019/06/25/Norm-of-PHP-Development/4.png"><meta property="og:image" content="https://blog.w2yun.com/2019/06/25/Norm-of-PHP-Development/5.png"><meta property="og:image" content="https://blog.w2yun.com/2019/06/25/Norm-of-PHP-Development/6.png"><meta property="og:updated_time" content="2020-01-14T10:06:00.194Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="PHP开发规范"><meta name="twitter:description" content="本规范遵循PSR-2命名规范和PSR-4自动加载规范，参考：PSR-2、 PSR-4  命名文件 目录使用小写+下划线； 类库、函数文件统一以.php为后缀； 类的文件名均以命名空间定义，并且命名空间的路径和类库文件所在路径一致； 类文件采用驼峰法命名（首字母大写），其它文件采用小写+下划线命名；"><meta name="twitter:image" content="https://blog.w2yun.com/2019/06/25/Norm-of-PHP-Development/1.png"><script type="text/javascript" id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Muse",version:"5.1.4",sidebar:{position:"left",display:"post",offset:12,b2t:!1,scrollpercent:!1,onmobile:!1},fancybox:!0,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},duoshuo:{userId:"0",author:"博主"},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><link rel="canonical" href="https://blog.w2yun.com/2019/06/25/Norm-of-PHP-Development/"><title>PHP开发规范 | 贝克街的卡夫卡</title><script type="text/javascript">var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?eb012439aef6a2b0b70936c41a8d698c";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">贝克街的卡夫卡</span><span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle"></p></div><div class="site-nav-toggle"> <button><span class="btn-bar"></span><span class="btn-bar"></span><span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br> 首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br> 标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br> 分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br> 归档</a></li><li class="menu-item menu-item-movies"><a href="/movies/" rel="section"><i class="menu-item-icon fa fa-fw fa-video-camera"></i><br> 电影</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br> 搜索</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i></span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"> <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://blog.w2yun.com/2019/06/25/Norm-of-PHP-Development/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="iyoung5"><meta itemprop="description" content><meta itemprop="image" content="/images/avatar.gif"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="贝克街的卡夫卡"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">PHP开发规范</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-25T18:07:32+08:00">2019-06-25</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/php/" itemprop="url" rel="index"><span itemprop="name">php</span></a></span></span> <span class="post-comments-count"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-comment-o"></i></span><a href="/2019/06/25/Norm-of-PHP-Development/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019/06/25/Norm-of-PHP-Development/" itemprop="commentCount"></span></a></span> <span class="post-meta-divider">|</span> <span class="page-pv">本文阅读量<span class="busuanzi-value" id="busuanzi_value_page_pv"></span> 次</span></div></header><div class="post-body" itemprop="articleBody"><blockquote><p>本规范遵循PSR-2命名规范和PSR-4自动加载规范，参考：<a href="https://learnku.com/laravel/t/2079/psr-specification-psr-2-coding-style-specification" target="_blank" rel="noopener">PSR-2</a>、 <a href="https://learnku.com/laravel/t/2081/psr-specification-psr-4-automatic-loading-specification" target="_blank" rel="noopener">PSR-4</a></p></blockquote><h2 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h2><h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><ul><li>目录使用小写+下划线；</li><li>类库、函数文件统一以.php为后缀；</li><li>类的文件名均以命名空间定义，并且命名空间的路径和类库文件所在路径一致；</li><li>类文件采用驼峰法命名（首字母大写），其它文件采用小写+下划线命名；</li></ul><a id="more"></a><p>参照一下文件命名方式：</p><p><img src="1.png" alt></p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ul><li>常量中所有字母都 <strong>必须</strong> 大写，词间以下划线分隔，如：<code>const DATE_APPROVED = &#39;2012-06-01&#39;</code>;</li><li>PHP所有 <a href="https://php.net/manual/en/reserved.keywords.php" target="_blank" rel="noopener">关键字</a> 以及 True/False/Null <strong>必须</strong> 全部小写，如：<code>if</code>,<code>elseif</code>,<code>or</code>,<code>true</code>,<code>use</code></li><li>函数的命名 <strong>必须</strong> 使用小写字母和下划线（小写字母开头）的方式，例如 <code>get_client_ip</code></li><li>方法的命名 <strong>必须</strong> 使用驼峰法（首字母小写），例如 <code>getUserName</code></li><li>属性的命名 <strong>必须</strong> 使用小写加下划线，例如 <code>table_name</code>、<code>instance</code></li><li>类名和类文件名保持一致， <strong>必须</strong> 使用驼峰法命名（首字母大写）,此处的「类」泛指所有的「class 类」、「接口」以及「traits 可复用代码块」；如：<code>class Member extends Controller</code></li><li><strong>必须</strong> 使用可阅读的英文或中文拼音命名类、方法、属性等， <strong>一定不可</strong> 使用如<code>$a</code>,<code>$b</code>,<code>$sql1</code>,<code>$sql2</code>等无明确意义的命名方式</li></ul><p>参照以下代码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">namespace think;</span><br><span class="line"></span><br><span class="line">use think\cache\Driver;</span><br><span class="line"></span><br><span class="line">class Cache</span><br><span class="line">&#123;</span><br><span class="line">    const DATE_APPROVED = &apos;2012-06-01&apos;;</span><br><span class="line">    </span><br><span class="line">    protected tableName = &apos;&apos;;</span><br><span class="line">    </span><br><span class="line">    public function getConfig()</span><br><span class="line">    &#123;</span><br><span class="line">        $member_id = get_member_id($member_id);</span><br><span class="line">        if ($member_id == null) &#123;</span><br><span class="line">            echo &apos;null&apos;;</span><br><span class="line">        &#125; elseif ($member_id == 1) &#123;</span><br><span class="line">            echo &apos;1&apos;;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            echo &apos;0&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul><li>数据表和字段采用小写加下划线方式命名，并注意字段名不要以下划线开头，例如 <code>zx_member</code> 表和 <code>user_name</code> 字段</li></ul><h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><h3 id="标签与编码"><a href="#标签与编码" class="headerlink" title="标签与编码"></a>标签与编码</h3><ul><li>PHP 代码 必须 使用 <code>&lt;?php ?&gt;</code>，不可使用短标签和自定义标签</li><li>纯 PHP 代码文件 必须 省略最后的 <code>?&gt;</code> 结束标签</li><li>PHP 代码 必须 且只可使用 <code>不带BOM的UTF-8</code> 编码</li><li>所有 PHP 文件 必须 以一个空白行作为结束</li></ul><h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><ul><li>非空行后 <strong>一定不可</strong> 有多余的空格符</li><li>代码 <strong>必须</strong> 使用 4 个空格符的缩进，<strong>一定不可</strong> 用 tab 键</li><li>其他按照<code>PSR2</code>规则，使用编辑完成代码格式自动化…</li></ul><h3 id="行"><a href="#行" class="headerlink" title="行"></a>行</h3><ul><li>每个 <code>namespace</code> 命名空间声明语句和 <code>use</code> 声明语句块后面，必须 插入一个空白行</li><li>类和方法开始花括号（<code>{</code>） 必须 写在类或函数声明后自成一行，结束花括号（<code>}</code>）也 必须 写在类或函数主体后自成一行</li><li>为了阅读方便，可适当添加空行，但不可滥用，不可出现连续空行</li><li><code>if</code>，<code>else</code> 等控制模块 <strong>一定不可</strong> 写成一行，<strong>必须</strong> 使用 「花括号」 分行；使用关键词 <code>elseif</code> 代替所有 <code>else if</code></li><li>控制模块不可嵌套多层，请使用函数等优化方法替代</li><li>其他按照<code>PSR2</code>规则，使用编辑完成代码格式自动化…</li></ul><h3 id="代码优化"><a href="#代码优化" class="headerlink" title="代码优化"></a>代码优化</h3><ul><li>去除不必要的变量命名，如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$plan = M(&apos;Plan&apos;);</span><br><span class="line">$plan_list = $plan-&gt;where(&apos;Is_show=1&apos;)-&gt;field(&apos;Id,Title,Add_time&apos;)-&gt;order(&apos;Add_time desc,Id ASC&apos;)-&gt;limit(5)-&gt;select();</span><br><span class="line">$this-&gt;assign(&apos;plan_list&apos;, $plan_list);</span><br></pre></td></tr></table></figure></li></ul><p>可优化成：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$this-&gt;assign(&apos;plan_list&apos;, M(&apos;Plan&apos;)-&gt;where(&apos;Is_show=1&apos;)-&gt;field(&apos;Id,Title,Add_time&apos;)-&gt;order(&apos;Add_time desc,Id ASC&apos;)-&gt;limit(5)-&gt;select());</span><br></pre></td></tr></table></figure><ul><li><code>switch</code> 代替多个 <code>elseif</code></li><li>控制模块不可嵌套多层，请使用函数等优化方法替代</li></ul><h2 id="编辑器代码格式化"><a href="#编辑器代码格式化" class="headerlink" title="编辑器代码格式化"></a>编辑器代码格式化</h2><h3 id="sublime"><a href="#sublime" class="headerlink" title="sublime"></a>sublime</h3><p>在启动 <code>Sublime</code> 程序后，使用快捷键 “<code>Ctrl + Shift + p</code> “，再选择 “<code>Package Control: Install Package</code>“</p><p><img src="2.png" alt></p><p>等待列出可安装的插件列表</p><p><img src="3.png" alt></p><p>输入”<code>CodeFormatter</code>“找到它，并点击即可安装</p><p><img src="4.png" alt></p><p> 打开需要格式化代码的文件，使用快捷键 “<code>Ctrl + Alt + f</code>“ 即可<br> 默认使用<code>psr2</code>样式</p><p><img src="5.png" alt></p><h3 id="NetBeans"><a href="#NetBeans" class="headerlink" title="NetBeans"></a>NetBeans</h3><p> 使用软件默认快捷键”<code>Alt + Shift + f</code> “,可实现代码格式化<br> 格式化的参数设置如下：</p><p><img src="6.png" alt></p><h3 id="phpstorm"><a href="#phpstorm" class="headerlink" title="phpstorm"></a>phpstorm</h3><p> 使用软件默认快捷键”<code>Ctrl + Alt + l</code> “,可实现代码格式化</p><p> 设置代码样式：File -&gt; Settings -&gt; Code Style -&gt;PHP</p><h3 id="ZendsSudio"><a href="#ZendsSudio" class="headerlink" title="ZendsSudio"></a>ZendsSudio</h3><p> 使用软件默认快捷键”<code>Ctrl + Shift + f</code> “,可实现代码格式化</p></div><div><ul class="post-copyright"><li class="post-copyright-author"> <strong>本文作者：</strong> iyoung5</li><li class="post-copyright-link"> <strong>本文链接：</strong> <a href="https://blog.w2yun.com/2019/06/25/Norm-of-PHP-Development/" title="PHP开发规范">https://blog.w2yun.com/2019/06/25/Norm-of-PHP-Development/</a></li><li class="post-copyright-license"> <strong>版权声明：</strong> 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！</li></ul></div><footer class="post-footer"><div class="post-tags"> <a href="/tags/thinkphp/" rel="tag"># thinkphp</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"> <a href="/2020/01/14/Think-Migration/" rel="prev" title="thinkphp5.1中的数据库迁移和数据填充">thinkphp5.1中的数据库迁移和数据填充<i class="fa fa-chevron-right"></i></a></div></div></footer></div></article><div class="post-spread"></div></div></div><div class="comments" id="comments"></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap"> 文章目录</li><li class="sidebar-nav-overview" data-target="site-overview-wrap"> 站点概览</li></ul><section class="site-overview-wrap sidebar-panel"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><p class="site-author-name" itemprop="name">iyoung5</p><p class="site-description motion-element" itemprop="description"></p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"> <a href="/archives/"><span class="site-state-item-count">2</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"> <a href="/categories/index.html"><span class="site-state-item-count">1</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"> <a href="/tags/index.html"><span class="site-state-item-count">6</span> <span class="site-state-item-name">标签</span></a></div></nav></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#命名"><span class="nav-number">1.</span> <span class="nav-text">命名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件"><span class="nav-number">1.1.</span> <span class="nav-text">文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.3.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编码"><span class="nav-number">2.</span> <span class="nav-text">编码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标签与编码"><span class="nav-number">2.1.</span> <span class="nav-text">标签与编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空格"><span class="nav-number">2.2.</span> <span class="nav-text">空格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行"><span class="nav-number">2.3.</span> <span class="nav-text">行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码优化"><span class="nav-number">2.4.</span> <span class="nav-text">代码优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑器代码格式化"><span class="nav-number">3.</span> <span class="nav-text">编辑器代码格式化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sublime"><span class="nav-number">3.1.</span> <span class="nav-text">sublime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NetBeans"><span class="nav-number">3.2.</span> <span class="nav-text">NetBeans</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#phpstorm"><span class="nav-number">3.3.</span> <span class="nav-text">phpstorm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ZendsSudio"><span class="nav-number">3.4.</span> <span class="nav-text">ZendsSudio</span></a></li></ol></li></ol></div></div></section></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2020</span><span class="with-love"><i class="fa fa-user"></i></span> <span class="author" itemprop="copyrightHolder">iyoung5</span></div><div class="busuanzi-count"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <span class="site-uv">本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 人次</span> <span class="site-pv">本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次</span></div></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i></div></div><script type="text/javascript">"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script><script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script><script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script><script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script><script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '8XrSri8jcb6cuy00nCYKRqXr-MdYXbMMI',
+        appKey: 'ySzB4K8Wz6yDVNi08UkgpTCI',
+        placeholder: 'Just go go',
+        avatar:'identicon',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script><script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><script async src="//code.tidio.co/swdov8pjnxayfpnzwd3gtqelvggbjezk.js"></script></body></html>
